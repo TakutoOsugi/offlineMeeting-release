@@ -47,8 +47,8 @@ export class SendOrder {
                     LocalStrage.delete();
                     // 画面をクリア
                     document.getElementById("order_list")!.innerHTML = "";
-                    document.getElementById("fee")!.innerText = "0";
-                    (<HTMLInputElement>document.getElementById("fee_input")!).value = "0";
+                    document.getElementById("total_fee")!.innerText = "0";
+                    document.getElementById("buttons-container")!.remove();
                 }
                 window.alert(result.message);
             });
