@@ -2,7 +2,7 @@ import { SetEventListner } from "@root/share/SetEventListner"
 
 export class CaliculateFee {
     setFee = () => {
-        Array.from(document.getElementsByClassName("alcohol_order")).forEach((element: Element) => {
+        Array.from(document.getElementsByClassName("purchase_order")).forEach((element: Element) => {
             const htmlElement = <HTMLElement>element;
 
             const feeElement = <HTMLInputElement>htmlElement.querySelector(".fee");
@@ -19,7 +19,6 @@ export class CaliculateFee {
                 "change",
                 ".order_number",
                 async (event: Event) => {
-                    (<HTMLInputElement>element.querySelector(".order_fee")).value = (<HTMLInputElement>event.target).value;
                     fee = this.caliculateFee(htmlElement);
                     feeElement.value = fee.toString();
                     feeShowElement.innerText = fee.toString();
@@ -30,16 +29,12 @@ export class CaliculateFee {
 
     caliculateFee = (htmlElement: HTMLElement) => {
         const orderNumber = parseInt((<HTMLInputElement>htmlElement.querySelector(".order_number"))?.value ?? "0");
+        const fee = parseInt((<HTMLInputElement>htmlElement.querySelector(".fee"))?.value ?? "0");
 
-        let fee = 0;
-        let orderAmount = 0;
+        let totalFee = 0;
 
-        if (orderNumber == 0) {
-            return 0;
-        }
+        totalFee = fee * orderNumber;
 
-        fee = orderAmount * orderNumber;
-
-        return fee;
+        return totalFee;
     }
 }
