@@ -1,0 +1,1 @@
+(()=>{"use strict";class t{constructor(){this.setPadding=()=>{const t=document.querySelector(".navbar");let e=0;if(t){const s=document.querySelector(".navbar-sub");s&&(e=t.offsetHeight,s.style.top=e+"px"),document.body.style.paddingTop=t.offsetHeight+e+5+"px"}},this.setPadding(),window.addEventListener("resize",this.setPadding)}}(async()=>{new t})()})();

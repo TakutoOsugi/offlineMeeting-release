@@ -1,0 +1,14 @@
+#main_logo_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* 必要に応じて高さを調整 */
+}
+
+#main_logo {
+    width: 90%;
+}
+
+#description {
+    margin-top: 5%;
+}
